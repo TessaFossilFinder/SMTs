@@ -1,0 +1,15 @@
+####################################
+# BLAST ncbi for SMT
+####################################
+# tbastn search of TSA on NCBI w/ ERG6 protein sequence ("0_smtquery.txt") limited by Porifera (taxid:6040) and Annelida (taxid:6340)
+# saved resulting 100 sequences to Desktop/SMTs/0_SMTs_Annelid+Porifera_tsa.fasta
+# replaced all " " with "_" in bbedit
+
+##################################
+# TRANSDECODER
+#################################
+# TRANSLATE TSA results into proteins using transdecoder
+
+TransDecoder.LongOrfs -t 0_Annelid+Porifera_TSA.fasta
+TransDecoder.Predict -t 0_Annelid+Porifera_TSA.fasta
+# Output: "0_Annelid+Porifera_TSA.fasta.transdecoder.pep.", deleted other intermediate files
