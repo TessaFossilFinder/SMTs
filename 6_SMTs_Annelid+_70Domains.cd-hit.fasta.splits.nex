@@ -1,0 +1,150 @@
+#nexus
+
+BEGIN Taxa;
+DIMENSIONS ntax=27;
+TAXLABELS
+[1] 'Alitta_virens|GINI01069748.1|p1'
+[2] 'Amphimedon_queenslandica|XP_003387525.1|PREDICTED'
+[3] 'Amynthas_gracilis|GIKF01022106.1|p2'
+[4] 'Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP'
+[5] 'Chondrilla_nucula|comp86071_c0_seq1|p1'
+[6] 'Cymbastela_stipitata|GHWA01019167.1|p1'
+[7] 'Cymbastela_stipitata|GHWA01019168.1|p1'
+[8] 'Cymbastela_stipitata|GHWA01019169.1|p1'
+[9] 'Eisenia_fetida|GIKG01135343.1|p1'
+[10] 'Enchytraeus_albidus|GJSG01022432.1|p1'
+[11] 'Glossoscolex_paulistus|GBIL01031091.1|p1'
+[12] 'Glossoscolex_paulistus|GBIL01037864.1|p1'
+[13] 'Haliclona_tubifera|GFAV01007619.1|p1'
+[14] 'Halisarca_caerulea|GFSI01014458.1|p1'
+[15] 'Halisarca_dujardinii|GIFI01118229.1|p1'
+[16] 'Ircinia_fasciculata|comp79702_c0_seq1|p1'
+[17] 'Lamellibrachia_luymesi|FUN_033246-T1'
+[18] 'Lumbriculus_variegatus|GIWA01114918.1|p1'
+[19] 'Lumbricus_castaneus|GGRB01015146.1|p1'
+[20] 'Lumbricus_rubellus|GIFV01044038.1|p1'
+[21] 'Neopetrosia_compacta|GIYW01007509.1|p1'
+[22] 'Neopetrosia_compacta|GIYW01054291.1|p1'
+[23] 'Paraescarpia_echinospica|GHDL01085970.1|p1'
+[24] 'Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP'
+[25] 'Platynereis_dumerilii|HALR01229039.1|p1'
+[26] 'Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP'
+[27] 'Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP'
+;
+END; [Taxa]
+
+BEGIN Splits;
+DIMENSIONS ntax=27 nsplits=108;
+FORMAT labels=no weights=yes confidences=no intervals=no;
+MATRIX
+	100	 2,
+	100	 13,
+	87	 2 13,
+	100	 6,
+	100	 8,
+	23	 6 8,
+	100	 7,
+	100	 6 7 8,
+	100	 21,
+	100	 22,
+	100	 21 22,
+	11	 6 7 8 21 22,
+	98	 2 6 7 8 13 21 22,
+	100	 5,
+	100	 14,
+	100	 15,
+	27	 14 15,
+	100	 5 14 15,
+	98	 2 5 6 7 8 13 14 15 21 22,
+	100	 16,
+	88	 2 5 6 7 8 13 14 15 16 21 22,
+	100	 4,
+	100	 24,
+	100	 4 24,
+	100	 26,
+	100	 27,
+	100	 26 27,
+	99	 4 24 26 27,
+	97	 1 3 9 10 11 12 17 18 19 20 23 25,
+	100	 3,
+	100	 11,
+	78	 3 11,
+	100	 19,
+	100	 20,
+	96	 19 20,
+	62	 3 11 19 20,
+	100	 9,
+	100	 3 9 11 19 20,
+	100	 18,
+	100	 3 9 11 18 19 20,
+	100	 10,
+	100	 12,
+	69	 10 12,
+	92	 3 9 10 11 12 18 19 20,
+	100	 17,
+	100	 23,
+	100	 17 23,
+	88	 3 9 10 11 12 17 18 19 20 23,
+	100	 1 25,
+	100	 25,
+	100	 1,
+	89	 2 13 21 22,
+	77	 7 8,
+	73	 5 14,
+	3	 1 3 9 10 11 12 16 17 18 19 20 23 25,
+	4	 10 17 23,
+	6	 10 12 17 23,
+	19	 3 9 10 11 18 19 20,
+	18	 3 19 20,
+	20	 3 9 19 20,
+	12	 2 21 22,
+	9	 4 16 24 26 27,
+	11	 1 3 9 10 11 12 18 19 20 25,
+	1	 1 3 9 10 11 17 18 19 20 23 25,
+	1	 1 17 23 25,
+	7	 3 9 11 12 18 19 20,
+	1	 1 3 9 11 12 18 19 20 25,
+	2	 1 3 9 11 18 19 20 25,
+	4	 3 9 11,
+	17	 9 19 20,
+	0	 2 6 7 8 13 16 21 22,
+	1	 2 5 13 14 15 21 22,
+	0	 6 7 8 13 21 22,
+	1	 2 4 6 7 8 13 16 21 22 24 26 27,
+	0	 13 21 22,
+	0	 6 7 8 21,
+	2	 1 2 5 6 7 8 13 14 15 21 22 25,
+	1	 1 5 14 15 25,
+	2	 3 11 19,
+	2	 3 19,
+	0	 4 17 23 24 26 27,
+	1	 1 2 5 6 7 8 13 14 15 16 21 22 25,
+	0	 9 11,
+	0	 3 9 11 18,
+	0	 1 3 9 11 17 18 19 20 23 25,
+	1	 2 5 6 7 8 13 14 15 16 21 22 26 27,
+	0	 3 9 11 20,
+	0	 9 18,
+	0	 2 4 6 7 8 13 21 22 24 26 27,
+	1	 5 6 7 8 14 15,
+	0	 3 11 18,
+	1	 5 14 15 16,
+	0	 11 19 20,
+	0	 2 5 6 7 8 13 14 15 21 22 26 27,
+	0	 9 20,
+	0	 9 11 19 20,
+	0	 1 3 9 10 11 18 19 20 25,
+	0	 5 15,
+	0	 3 9,
+	0	 1 4 24 25 26 27,
+	0	 16 26 27,
+	1	 2 6 7 8 21 22,
+	0	 3 11 20,
+	0	 5 6 7 8 14 15 21 22,
+	0	 2 13 22,
+	0	 3 4 9 10 11 12 18 19 20 24 26 27,
+	0	 1 5 14 15 17 23 25,
+	0	 12 17 23,
+;
+END; [Splits]
+

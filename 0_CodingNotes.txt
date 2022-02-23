@@ -8,8 +8,129 @@
 ##################################
 # TRANSDECODER
 #################################
-# TRANSLATE TSA results into proteins using transdecoder
 
-TransDecoder.LongOrfs -t 0_Annelid+Porifera_TSA.fasta
-TransDecoder.Predict -t 0_Annelid+Porifera_TSA.fasta
-# Output: "0_Annelid+Porifera_TSA.fasta.transdecoder.pep.", deleted other intermediate files
+TransDecoder.LongOrfs -t 0_SMTs_Annelid+Porifera_tsa.fasta
+TransDecoder.Predict -t 0_SMTs_Annelid_Porifera_tsa.fasta
+# translate TSA results into proteins using transdecoder
+# copied and changed name of "longest_orfs.pep" to "1_SMTs_Annelid+Porifera_aa.fasta"
+
+################################
+# FORMAT NCBI SEQUENCE HEADERS
+################################
+# open 0_SMTs_Annelid+Porifera_aa.fasta in bbedit
+# Grep/find: "( ).*" and delete (anything after ".p#")
+# Grep/find: (^>)(.*)(_TSA:_)([a-z]*_[a-z]*)(.*)(p[0-9]*)
+# Grep/replace: \1\4|\2|\6
+
+###########################
+# Append "|OUTGROUP" to outgroup headers 
+##########################
+# in bbedit, grep/search:(^>)(.*)($)
+# grep/replace: \1\2\3\|OUTGROUP
+
+################################
+# COMBINE annelid and porifera aa fasta with outgroup fasta
+################################
+
+Cat 1_SMTs_Annelid+Porifera_aa.fasta 0_SMTs_Outgroups_aa.fasta > 1_Annelid+Porifera+Out_AA.fasta
+# Combines NCBI sequences with outgroups provided by David, still missing sequences found elsewhere file
+
+###############################
+# PFAM/HMMER
+##############################
+
+hmmscan --cpu 4 --domtblout Pfam.out ~/Pfam/Pfam-A.hmm 1_Annelid+Porifera+Out_AA.fasta > 2_Annelid+Porifera+Out_CD.txt
+# Perform a HMMER search against the PFAM HMM database
+# this file is highly formatted but code also created a "Pfam.out" file that is less formatted which I renamed to 2_Annelid+Porifera+Out_CD2.txt
+
+#############################
+# EXTRACTING conserved sterol binding domains
+#############################
+
+grep 'Sterol_MT_C' 2_Annelid+Porifera+Out_CD2.txt > Temp1.txt
+# Pull sequences containing the sterol binding domain at c-terminal "Sterol_MT_C", and move to new file
+
+awk '{print "\042"$4"\042"}' Temp1.txt > Temp2.txt
+# Extract these sequence ID's
+
+sort -u Temp2.txt > Temp3.txt
+# Sort Temp2.txt file to remove duplicate sequences
+# returned 98 sequences
+
+xargs samtools faidx 1_Annelid+Porifera+Out_AA.fasta < Temp3.txt > 3_Annelid+Porifera+Out_smt.fasta
+#sort and index original peptide sequences from orignal concatenated file that contain "Sterol_MT_C"
+
+############################
+Combine David vetter SMTs from other sources i.e. github
+############################
+
+Cat 3_Annelid+Porifera+Out_smt.fasta 0_SMTs_Git_aa.fasta > 3_SMTs_Annelid+.fasta
+
+############################
+# ALIGN SEQUENCES using MAFFT
+############################
+
+mafft 3_SMTs_Annelid+.fasta > 4_SMTs_Annelid+_MAFFT.fasta
+
+###########################
+
+rm -i Temp*
+# Remove temporary files
+
+##########################
+# trimAL
+##########################
+
+trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL70.fasta -gt 0.70
+#trim sequences with less than 70% coverage or more than 30% gaps
+
+#################################
+# Clean domains with CD-Hit
+#################################
+
+# create temp directory
+
+mkdir temp
+cd temp
+
+# Format results so each line is one sequence
+
+gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL70.fasta > tmp1
+tr -d '\n' < tmp1  > tmp2
+gsed 's/>/\n>/g' tmp2 > tmp3
+gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_70Domains.txt
+rm tmp*
+
+# split into files by ID
+
+awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn } ' 5_SMTs_Annelid+_70Domains.txt
+
+# reformat into fasta
+
+for i in *.tmp; do 
+  gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/\n\1/' $i > ${i%.tmp}.fasta; 
+done
+
+for i in *.fasta; do
+	cd-hit -i $i -o ${i%.fasta}.cd-hit.txt -d 100 -c 0.90;
+done
+
+cat *.cd-hit.txt > ../6_SMTs_Annelid+_70Domains.cd-hit.fasta
+
+cd ../
+rm -r temp
+# 27 sequences left at this point
+
+##########################
+# RUN IQTREE
+##########################
+
+export PATH=/Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin:$PATH
+# copy Iqtree path to PATH
+
+ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqtree2 iqtree
+# making path to program
+
+iqtree -s 6_SMTs_Annelid+_70Domains.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+# Run iqtree with 1000 bootstraps
+# took ~3 minutes

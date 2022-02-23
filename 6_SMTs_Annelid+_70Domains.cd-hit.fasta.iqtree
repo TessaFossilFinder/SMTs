@@ -1,0 +1,203 @@
+IQ-TREE 2.1.3 COVID-edition built Oct  4 2021
+
+Input file name: 6_SMTs_Annelid+_70Domains.cd-hit.fasta
+Type of analysis: tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 558478
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 27 sequences with 291 amino-acid sites
+Number of constant sites: 31 (= 10.6529% of all sites)
+Number of invariant (constant or ambiguous constant) sites: 31 (= 10.6529% of all sites)
+Number of parsimony informative sites: 239
+Number of distinct site patterns: 272
+
+SUBSTITUTION PROCESS
+--------------------
+
+Model of substitution: LG+I+G4
+
+State frequencies: (model)
+
+Model of rate heterogeneity: Invar+Gamma with 4 categories
+Proportion of invariable sites: 0.0568
+Gamma shape alpha: 1.7251
+
+ Category  Relative_rate  Proportion
+  0         0              0.0568
+  1         0.2736         0.2358
+  2         0.6596         0.2358
+  3         1.1252         0.2358
+  4         2.1823         0.2358
+Relative rates are computed as MEAN of the portion of the Gamma distribution falling in the category.
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -9511.3260 (s.e. 293.8238)
+Unconstrained log-likelihood (without tree): -1610.1740
+Number of free parameters (#branches + #model parameters): 53
+Akaike information criterion (AIC) score: 19128.6521
+Corrected Akaike information criterion (AICc) score: 19152.8040
+Bayesian information criterion (BIC) score: 19323.3382
+
+Total tree length (sum of branch lengths): 9.1647
+Sum of internal branch lengths: 4.1073 (44.8168% of tree length)
+
+NOTE: Tree is UNROOTED although outgroup taxon 'Alitta_virens|GINI01069748.1|p1' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++--Alitta_virens|GINI01069748.1|p1
+|
+|                                         +------------Amphimedon_queenslandica|XP_003387525.1|PREDICTED
+|                                      +--| (87)
+|                                      |  +-------------Haliclona_tubifera|GFAV01007619.1|p1
+|                                 +----| (89)
+|                                 |    |    +-------Neopetrosia_compacta|GIYW01007509.1|p1
+|                                 |    +----| (100)
+|                                 |         +-------Neopetrosia_compacta|GIYW01054291.1|p1
+|                            +----| (98)
+|                            |    |            +--Cymbastela_stipitata|GHWA01019167.1|p1
+|                            |    +------------| (100)
+|                            |                 |  +------Cymbastela_stipitata|GHWA01019168.1|p1
+|                            |                 +--| (77)
+|                            |                    +**Cymbastela_stipitata|GHWA01019169.1|p1
+|                    +-------| (98)
+|                    |       |                        +--Chondrilla_nucula|comp86071_c0_seq1|p1
+|                    |       |                     +--| (73)
+|                    |       |                     |  +---Halisarca_caerulea|GFSI01014458.1|p1
+|                    |       +---------------------| (100)
+|                    |                             +-----Halisarca_dujardinii|GIFI01118229.1|p1
+|                 +--| (88)
+|                 |  +-----------------Ircinia_fasciculata|comp79702_c0_seq1|p1
+|            +----| (97)
+|            |    |                +------Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP
+|            |    |      +---------| (100)
+|            |    |      |         +----------Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP
+|            |    +------| (99)
+|            |           |           +----------Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP
+|            |           +-----------| (100)
+|            |                       +-----------Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP
++------------| (100)
+|            |                      +--------Amynthas_gracilis|GIKF01022106.1|p2
+|            |                   +--| (78)
+|            |                   |  +----Glossoscolex_paulistus|GBIL01031091.1|p1
+|            |                +--| (62)
+|            |                |  |  +--Lumbricus_castaneus|GGRB01015146.1|p1
+|            |                |  +--| (96)
+|            |                |     +--Lumbricus_rubellus|GIFV01044038.1|p1
+|            |            +---| (100)
+|            |            |   +--Eisenia_fetida|GIKG01135343.1|p1
+|            |      +-----| (100)
+|            |      |     +-----Lumbriculus_variegatus|GIWA01114918.1|p1
+|            |  +---| (92)
+|            |  |   |  +-------------Enchytraeus_albidus|GJSG01022432.1|p1
+|            |  |   +--| (69)
+|            |  |      +------------Glossoscolex_paulistus|GBIL01037864.1|p1
+|            +--| (88)
+|               |          +--Lamellibrachia_luymesi|FUN_033246-T1
+|               +----------| (100)
+|                          +--Paraescarpia_echinospica|GHDL01085970.1|p1
+|
++----Platynereis_dumerilii|HALR01229039.1|p1
+
+Tree in newick format:
+
+(Alitta_virens|GINI01069748.1|p1:0.0844279785,(((((((Amphimedon_queenslandica|XP_003387525.1|PREDICTED:0.3485904149,Haliclona_tubifera|GFAV01007619.1|p1:0.3854121642)87:0.0974944117,(Neopetrosia_compacta|GIYW01007509.1|p1:0.2181881012,Neopetrosia_compacta|GIYW01054291.1|p1:0.2155575174)100:0.1539656707)89:0.1417651613,(Cymbastela_stipitata|GHWA01019167.1|p1:0.0393085040,(Cymbastela_stipitata|GHWA01019168.1|p1:0.1827525432,Cymbastela_stipitata|GHWA01019169.1|p1:0.0000010016)77:0.0763699039)100:0.3386596183)98:0.1447095923,((Chondrilla_nucula|comp86071_c0_seq1|p1:0.0982446330,Halisarca_caerulea|GFSI01014458.1|p1:0.1073762943)73:0.0663468747,Halisarca_dujardinii|GIFI01118229.1|p1:0.1569046706)100:0.5820278466)98:0.2169898936,Ircinia_fasciculata|comp79702_c0_seq1|p1:0.4682189082)88:0.0835173183,((Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP:0.1965231822,Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP:0.2998410290)100:0.2619092597,(Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP:0.2976903352,Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP:0.3192211185)100:0.3360592942)99:0.1871379201)97:0.1349042172,((((((Amynthas_gracilis|GIKF01022106.1|p2:0.2334329915,Glossoscolex_paulistus|GBIL01031091.1|p1:0.1298090631)78:0.0557390903,(Lumbricus_castaneus|GGRB01015146.1|p1:0.0284601820,Lumbricus_rubellus|GIFV01044038.1|p1:0.0133432866)96:0.0422582136)62:0.0252839839,Eisenia_fetida|GIKG01135343.1|p1:0.0682020843)100:0.1211509579,Lumbriculus_variegatus|GIWA01114918.1|p1:0.1618436092)100:0.1623987927,(Enchytraeus_albidus|GJSG01022432.1|p1:0.3812415598,Glossoscolex_paulistus|GBIL01037864.1|p1:0.3389137336)69:0.0420697024)92:0.1077614131,(Lamellibrachia_luymesi|FUN_033246-T1:0.0607417752,Paraescarpia_echinospica|GHDL01085970.1|p1:0.0706149150)100:0.3101091266)88:0.0700838575)100:0.3486260516,Platynereis_dumerilii|HALR01229039.1|p1:0.1525228235);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -9511.326393
+Robinson-Foulds distance between ML tree and consensus tree: 0
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--Alitta_virens|GINI01069748.1|p1
+|
+|                                         +------------Amphimedon_queenslandica|XP_003387525.1|PREDICTED
+|                                      +--| (87)
+|                                      |  +-------------Haliclona_tubifera|GFAV01007619.1|p1
+|                                 +----| (89)
+|                                 |    |    +-------Neopetrosia_compacta|GIYW01007509.1|p1
+|                                 |    +----| (100)
+|                                 |         +-------Neopetrosia_compacta|GIYW01054291.1|p1
+|                            +----| (98)
+|                            |    |            +--Cymbastela_stipitata|GHWA01019167.1|p1
+|                            |    +------------| (100)
+|                            |                 |  +------Cymbastela_stipitata|GHWA01019168.1|p1
+|                            |                 +--| (77)
+|                            |                    +--Cymbastela_stipitata|GHWA01019169.1|p1
+|                    +-------| (98)
+|                    |       |                        +--Chondrilla_nucula|comp86071_c0_seq1|p1
+|                    |       |                     +--| (73)
+|                    |       |                     |  +---Halisarca_caerulea|GFSI01014458.1|p1
+|                    |       +---------------------| (100)
+|                    |                             +-----Halisarca_dujardinii|GIFI01118229.1|p1
+|                 +--| (88)
+|                 |  +-----------------Ircinia_fasciculata|comp79702_c0_seq1|p1
+|            +----| (97)
+|            |    |                +------Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP
+|            |    |      +---------| (100)
+|            |    |      |         +----------Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP
+|            |    +------| (99)
+|            |           |           +----------Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP
+|            |           +-----------| (100)
+|            |                       +-----------Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP
++------------| (100)
+|            |                      +--------Amynthas_gracilis|GIKF01022106.1|p2
+|            |                   +--| (78)
+|            |                   |  +----Glossoscolex_paulistus|GBIL01031091.1|p1
+|            |                +--| (62)
+|            |                |  |  +--Lumbricus_castaneus|GGRB01015146.1|p1
+|            |                |  +--| (96)
+|            |                |     +--Lumbricus_rubellus|GIFV01044038.1|p1
+|            |            +---| (100)
+|            |            |   +--Eisenia_fetida|GIKG01135343.1|p1
+|            |      +-----| (100)
+|            |      |     +-----Lumbriculus_variegatus|GIWA01114918.1|p1
+|            |  +---| (92)
+|            |  |   |  +-------------Enchytraeus_albidus|GJSG01022432.1|p1
+|            |  |   +--| (69)
+|            |  |      +------------Glossoscolex_paulistus|GBIL01037864.1|p1
+|            +--| (88)
+|               |          +--Lamellibrachia_luymesi|FUN_033246-T1
+|               +----------| (100)
+|                          +--Paraescarpia_echinospica|GHDL01085970.1|p1
+|
++----Platynereis_dumerilii|HALR01229039.1|p1
+
+
+Consensus tree in newick format: 
+
+(Alitta_virens|GINI01069748.1|p1:0.0844095251,(((((((Amphimedon_queenslandica|XP_003387525.1|PREDICTED:0.3487655177,Haliclona_tubifera|GFAV01007619.1|p1:0.3856152928)87:0.0974542726,(Neopetrosia_compacta|GIYW01007509.1|p1:0.2182650401,Neopetrosia_compacta|GIYW01054291.1|p1:0.2156588281)100:0.1540519559)89:0.1417908029,(Cymbastela_stipitata|GHWA01019167.1|p1:0.0392949014,(Cymbastela_stipitata|GHWA01019168.1|p1:0.1828243416,Cymbastela_stipitata|GHWA01019169.1|p1:0.0000020799)77:0.0764149472)100:0.3388295715)98:0.1447190304,((Chondrilla_nucula|comp86071_c0_seq1|p1:0.0982718275,Halisarca_caerulea|GFSI01014458.1|p1:0.1074315316)73:0.0664104399,Halisarca_dujardinii|GIFI01118229.1|p1:0.1568967600)100:0.5823364167)98:0.2171116209,Ircinia_fasciculata|comp79702_c0_seq1|p1:0.4684965322)88:0.0835139146,((Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP:0.1965545120,Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP:0.3000270229)100:0.2620591158,(Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP:0.2977594365,Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP:0.3194429856)100:0.3362289816)99:0.1872065494)97:0.1349654528,((((((Amynthas_gracilis|GIKF01022106.1|p2:0.2336152654,Glossoscolex_paulistus|GBIL01031091.1|p1:0.1299202963)78:0.0557407529,(Lumbricus_castaneus|GGRB01015146.1|p1:0.0284754780,Lumbricus_rubellus|GIFV01044038.1|p1:0.0133551586)96:0.0422876905)62:0.0252970595,Eisenia_fetida|GIKG01135343.1|p1:0.0682456530)100:0.1212076439,Lumbriculus_variegatus|GIWA01114918.1|p1:0.1619577834)100:0.1624918910,(Enchytraeus_albidus|GJSG01022432.1|p1:0.3815129312,Glossoscolex_paulistus|GBIL01037864.1|p1:0.3391751228)69:0.0420420876)92:0.1078022897,(Lamellibrachia_luymesi|FUN_033246-T1:0.0606955554,Paraescarpia_echinospica|GHDL01085970.1|p1:0.0707049707)100:0.3103059627)88:0.0701143489)100:0.3488939179,Platynereis_dumerilii|HALR01229039.1|p1:0.1526426236);
+
+TIME STAMP
+----------
+
+Date and time: Wed Feb 23 12:14:54 2022
+Total CPU time used: 73.174886 seconds (0h:1m:13s)
+Total wall-clock time used: 10.35763597 seconds (0h:0m:10s)
+
