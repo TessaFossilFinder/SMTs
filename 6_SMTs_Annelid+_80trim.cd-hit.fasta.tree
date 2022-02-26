@@ -1,15 +1,22 @@
 #NEXUS
 begin taxa;
-	dimensions ntax=27;
+	dimensions ntax=41;
 	taxlabels
+	'Alitta_virens|GINI01005303.1|p1'[&!color=#0000ff]
 	'Alitta_virens|GINI01069748.1|p1'[&!color=#0000ff]
+	'Alitta_virens|GINI01095864.1|p1'[&!color=#0000ff]
 	'Amphimedon_queenslandica|XP_003387525.1|PREDICTED'
 	'Amynthas_gracilis|GIKF01022106.1|p2'[&!color=#0000ff]
+	'Aplysina_aerophoba|HANI01212487.1|p1'
+	'Aplysina_aerophoba|HBWR010140028.1|p1'
+	'Aplysina_aerophoba|HBWR010140029.1|p1'
 	'Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP'[&!color=#ff00ff]
+	'Capitella_teleta|ELU07827.1'[&!color=#0000ff]
 	'Chondrilla_nucula|comp86071_c0_seq1|p1'
 	'Cymbastela_stipitata|GHWA01019167.1|p1'
 	'Cymbastela_stipitata|GHWA01019168.1|p1'
 	'Cymbastela_stipitata|GHWA01019169.1|p1'
+	'Eisenia_fetida|GIKG01031241.1|p2'[&!color=#0000ff]
 	'Eisenia_fetida|GIKG01135343.1|p1'[&!color=#0000ff]
 	'Enchytraeus_albidus|GJSG01022432.1|p1'[&!color=#0000ff]
 	'Glossoscolex_paulistus|GBIL01031091.1|p1'[&!color=#0000ff]
@@ -17,6 +24,7 @@ begin taxa;
 	'Haliclona_tubifera|GFAV01007619.1|p1'
 	'Halisarca_caerulea|GFSI01014458.1|p1'
 	'Halisarca_dujardinii|GIFI01118229.1|p1'
+	'Hirudo_verbana|GGIQ01029655.1|p1'[&!color=#0000ff]
 	'Ircinia_fasciculata|comp79702_c0_seq1|p1'
 	'Lamellibrachia_luymesi|FUN_033246-T1'[&!color=#0000ff]
 	'Lumbriculus_variegatus|GIWA01114918.1|p1'[&!color=#0000ff]
@@ -24,16 +32,22 @@ begin taxa;
 	'Lumbricus_rubellus|GIFV01044038.1|p1'[&!color=#0000ff]
 	'Neopetrosia_compacta|GIYW01007509.1|p1'
 	'Neopetrosia_compacta|GIYW01054291.1|p1'
+	'Ophryotrocha_diadema|GENQ01005341.1|p1'[&!color=#0000ff]
 	'Paraescarpia_echinospica|GHDL01085970.1|p1'[&!color=#0000ff]
+	'Perinereis_aibuhitensis|GDAF01010172.1|p1'[&!color=#0000ff]
+	'Perinereis_aibuhitensis|GDAF01019697.1|p1'[&!color=#0000ff]
 	'Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP'[&!color=#ff00ff]
 	'Platynereis_dumerilii|HALR01229039.1|p1'[&!color=#0000ff]
+	'Platynereis_dumerilii|HALR01261698.1|p1'[&!color=#0000ff]
 	'Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP'[&!color=#ff00ff]
 	'Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Pygospio_elegans|GFPL01001539.1|p1'[&!color=#0000ff]
+	'Sycon_coactum|comp109195_c0_seq1|p1'
 ;
 end;
 
 begin trees;
-	tree tree_1 = [&R] ('Alitta_virens|GINI01069748.1|p1':0.084428,((((((('Amphimedon_queenslandica|XP_003387525.1|PREDICTED':0.34859,'Haliclona_tubifera|GFAV01007619.1|p1':0.385412)[&label=87]:0.097494,('Neopetrosia_compacta|GIYW01007509.1|p1':0.218188,'Neopetrosia_compacta|GIYW01054291.1|p1':0.215558)[&label=100]:0.153966)[&label=89]:0.141765,('Cymbastela_stipitata|GHWA01019167.1|p1':0.039309,('Cymbastela_stipitata|GHWA01019168.1|p1':0.182753,'Cymbastela_stipitata|GHWA01019169.1|p1':1.0E-6)[&label=77]:0.07637)[&label=100]:0.33866)[&label=98]:0.14471,(('Chondrilla_nucula|comp86071_c0_seq1|p1':0.098245,'Halisarca_caerulea|GFSI01014458.1|p1':0.107376)[&label=73]:0.066347,'Halisarca_dujardinii|GIFI01118229.1|p1':0.156905)[&label=100]:0.582028)[&label=98]:0.21699,'Ircinia_fasciculata|comp79702_c0_seq1|p1':0.468219)[&label=88]:0.083517,(('Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP':0.196523,'Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP':0.299841)[&label=100]:0.261909,('Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP':0.29769,'Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP':0.319221)[&label=100]:0.336059)[&label=99]:0.187138)[&label=97]:0.134904,(((((('Amynthas_gracilis|GIKF01022106.1|p2':0.233433,'Glossoscolex_paulistus|GBIL01031091.1|p1':0.129809)[&label=78]:0.055739,('Lumbricus_castaneus|GGRB01015146.1|p1':0.02846,'Lumbricus_rubellus|GIFV01044038.1|p1':0.013343)[&label=96]:0.042258)[&label=62]:0.025284,'Eisenia_fetida|GIKG01135343.1|p1':0.068202)[&label=100]:0.121151,'Lumbriculus_variegatus|GIWA01114918.1|p1':0.161844)[&label=100]:0.162399,('Enchytraeus_albidus|GJSG01022432.1|p1':0.381242,'Glossoscolex_paulistus|GBIL01037864.1|p1':0.338914)[&label=69]:0.04207)[&label=92]:0.107761,('Lamellibrachia_luymesi|FUN_033246-T1':0.060742,'Paraescarpia_echinospica|GHDL01085970.1|p1':0.070615)[&label=100]:0.310109)[&label=88]:0.070084)[&label=100]:0.348626,'Platynereis_dumerilii|HALR01229039.1|p1':0.152523);
+	tree tree_1 = [&R] ('Alitta_virens|GINI01005303.1|p1':0.156837,(((('Alitta_virens|GINI01069748.1|p1':0.093772,((((((('Amphimedon_queenslandica|XP_003387525.1|PREDICTED':0.316889,'Haliclona_tubifera|GFAV01007619.1|p1':0.282525)[&label=99]:0.132967,('Neopetrosia_compacta|GIYW01007509.1|p1':0.173414,'Neopetrosia_compacta|GIYW01054291.1|p1':0.201215)[&label=100]:0.160677)[&label=100]:0.198454,('Cymbastela_stipitata|GHWA01019167.1|p1':0.060754,('Cymbastela_stipitata|GHWA01019168.1|p1':0.194731,'Cymbastela_stipitata|GHWA01019169.1|p1':1.0E-6)[&label=93]:0.121799)[&label=100]:0.314874)[&label=98]:0.148613,('Aplysina_aerophoba|HANI01212487.1|p1':0.402498,('Chondrilla_nucula|comp86071_c0_seq1|p1':0.058988,('Halisarca_caerulea|GFSI01014458.1|p1':0.097025,'Halisarca_dujardinii|GIFI01118229.1|p1':0.220086)[&label=71]:0.044617)[&label=100]:0.336809)[&label=99]:0.157654)[&label=99]:0.160311,((((('Aplysina_aerophoba|HBWR010140028.1|p1':0.107956,'Aplysina_aerophoba|HBWR010140029.1|p1':0.148509)[&label=100]:0.896308,('Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP':0.185365,'Physcomitrium_patens|XP_024395494.1|cycloartenol-C-24-methyltransferase_1-like|OUTGROUP':0.331652)[&label=99]:0.237101)[&label=63]:0.050604,'Hirudo_verbana|GGIQ01029655.1|p1':0.720771)[&label=55]:0.038918,('Puccinia_graminis|XP_003321161.1|sterol_24-C-methyltransferase|OUTGROUP':0.331402,'Puccinia_graminis|XP_003335809.1|sterol_24-C-methyltransferase|OUTGROUP':0.333967)[&label=100]:0.338222)[&label=94]:0.187159,'Ircinia_fasciculata|comp79702_c0_seq1|p1':0.576485)[&label=51]:0.043926)[&label=75]:0.074852,'Sycon_coactum|comp109195_c0_seq1|p1':0.648279)[&label=44]:0.047054,(((((('Amynthas_gracilis|GIKF01022106.1|p2':0.223259,'Glossoscolex_paulistus|GBIL01031091.1|p1':0.163467)[&label=97]:0.083783,('Lumbricus_castaneus|GGRB01015146.1|p1':0.03025,'Lumbricus_rubellus|GIFV01044038.1|p1':0.022052)[&label=99]:0.041564)[&label=90]:0.03067,('Eisenia_fetida|GIKG01031241.1|p2':0.104569,'Eisenia_fetida|GIKG01135343.1|p1':0.021167)[&label=95]:0.044274)[&label=100]:0.101234,'Lumbriculus_variegatus|GIWA01114918.1|p1':0.180995)[&label=99]:0.169378,('Enchytraeus_albidus|GJSG01022432.1|p1':0.408945,'Glossoscolex_paulistus|GBIL01037864.1|p1':0.296905)[&label=86]:0.090191)[&label=41]:0.045874,('Capitella_teleta|ELU07827.1':0.502506,((('Lamellibrachia_luymesi|FUN_033246-T1':0.083965,'Paraescarpia_echinospica|GHDL01085970.1|p1':0.050284)[&label=100]:0.226212,'Ophryotrocha_diadema|GENQ01005341.1|p1':0.804079)[&label=98]:0.11206,'Pygospio_elegans|GFPL01001539.1|p1':0.550574)[&label=50]:0.054251)[&label=48]:0.044243)[&label=47]:0.062348)[&label=100]:0.389849)[&label=38]:0.031546,'Perinereis_aibuhitensis|GDAF01019697.1|p1':0.165654)[&label=69]:0.029586,'Platynereis_dumerilii|HALR01229039.1|p1':0.174675)[&label=99]:0.159868,'Alitta_virens|GINI01095864.1|p1':0.311079)[&label=100]:0.075401,('Perinereis_aibuhitensis|GDAF01010172.1|p1':0.125123,'Platynereis_dumerilii|HALR01261698.1|p1':0.202638)[&label=92]:0.024477);
 end;
 
 begin figtree;

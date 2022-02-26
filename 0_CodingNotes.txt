@@ -66,9 +66,10 @@ Combine David vetter SMTs from other sources i.e. github
 
 Cat 3_Annelid+Porifera+Out_smt.fasta 0_SMTs_Git_aa.fasta > 3_SMTs_Annelid+.fasta
 
-############################
+##############################
 # ALIGN SEQUENCES using MAFFT
-############################
+##############################
+# Requires MAFFT (https://mafft.cbrc.jp/alignment/software/)
 
 mafft 3_SMTs_Annelid+.fasta > 4_SMTs_Annelid+_MAFFT.fasta
 
@@ -78,6 +79,72 @@ rm -i Temp*
 # Remove temporary files
 
 ##########################
+# trimAL (=/>5% gaps)
+##########################
+# Requires trimAL (http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)
+
+trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL.95.fasta -gt 0.95
+# Removes all positions in the alignment with gaps in 5% or more of the sequences; 
+
+#################################
+# Clean (95%)sequences with CD-Hit
+#################################
+# Requires CD-HIT (http://weizhong-lab.ucsd.edu/cd-hit/)
+
+# create temp directory #
+
+mkdir temp
+cd temp
+
+# Format results so each line is one sequence #
+
+gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.95.fasta > tmp1
+tr -d '\n' < tmp1  > tmp2
+gsed 's/>/\n>/g' tmp2 > tmp3
+gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_95trim.txt
+rm tmp*
+
+# split into files by ID #
+
+awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn } ' 5_SMTs_Annelid+_95trim.txt
+# split each by sequence header
+
+# reformat into fasta #
+
+for i in *.tmp; do 
+  gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/\n\1/' $i > ${i%.tmp}.fasta; 
+done
+
+for i in *.fasta; do
+	cd-hit -i $i -o ${i%.fasta}.cd-hit.txt -d 100 -c 0.90;
+done
+# removes sequences that are 90% similar
+
+cat *.cd-hit.txt > ../6_SMTs_Annelid+_95trim.cd-hit.fasta
+
+cd ../
+rm -r temp
+
+############################
+# RUN IQTREE (95%)sequences
+############################
+# Requires IQtree (http://www.iqtree.org/)
+
+export PATH=/Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin:$PATH
+# copy Iqtree path to PATH
+
+ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqtree2 iqtree
+# making path to program
+
+iqtree -s 6_SMTs_Annelid+_95trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+# Run iqtree with 1000 bootstraps
+# took ~1 minute
+
+######################################
+######### ALTERNATE TREES ############
+######################################
+
+##########################
 # trimAL (=/>30% gaps)
 ##########################
 
@@ -85,15 +152,15 @@ trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL70.fasta -gt 0
 #trim sequences with less than 70% coverage or more than 30% gaps
 
 #################################
-# Clean (70%)domains with CD-Hit
+# Clean (70%)sequences with CD-Hit
 #################################
 
-# create temp directory
+# create temp directory #
 
 mkdir temp
 cd temp
 
-# Format results so each line is one sequence
+# Format results so each line is one sequence #
 
 gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL70.fasta > tmp1
 tr -d '\n' < tmp1  > tmp2
@@ -101,11 +168,12 @@ gsed 's/>/\n>/g' tmp2 > tmp3
 gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_70trim.txt
 rm tmp*
 
-# split into files by ID
+# split into files by ID #
 
 awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn } ' 5_SMTs_Annelid+_70trim.txt
+# split each by sequence header
 
-# reformat into fasta
+# reformat into fasta #
 
 for i in *.tmp; do 
   gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/\n\1/' $i > ${i%.tmp}.fasta; 
@@ -120,7 +188,6 @@ cat *.cd-hit.txt > ../6_SMTs_Annelid+_70trim.cd-hit.fasta
 
 cd ../
 rm -r temp
-# 27 sequences left at this point
 
 ##########################
 # RUN IQTREE (70%)
@@ -137,16 +204,15 @@ iqtree -s 6_SMTs_Annelid+_70trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
 # took ~3 minutes
 
 ##########################
-ALTERNATE TREES
 ##########################
-# trimAL (=/>5% gaps)
+# trimAL (=/>20% gaps)
 ##########################
 
-trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL95.fasta -gt 0.95 -cons 60
-# Removes all positions in the alignment with gaps in 5% or more of the sequences, unless this leaves less than 60% of original alignment. In such case, print the 60% best (with less gaps) positions. 
+trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL.80.fasta -gt 0.80
+#trim sequences with less than 90% coverage (more than 20% gaps)
 
 #################################
-# Clean (95%)domains with CD-Hit
+# Clean (80%)sequences with CD-Hit
 #################################
 
 # create temp directory #
@@ -156,40 +222,35 @@ cd temp
 
 # Format results so each line is one sequence #
 
-gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL95.fasta > tmp1
+gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.80.fasta > tmp1
 tr -d '\n' < tmp1  > tmp2
 gsed 's/>/\n>/g' tmp2 > tmp3
-gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_95trim.txt
+gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_80trim.txt
 rm tmp*
 
 # split into files by ID #
 
-awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn }' 5_SMTs_Annelid+_95trim.txt
-#sorts sequences into .tmp files based on species
+awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn } ' 5_SMTs_Annelid+_80trim.txt
+# split each by sequence header
 
 # reformat into fasta #
 
-for i in *.tmp; do gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/|\1/' $i > ${i%.tmp}.fasta; done
-# for each .tmp file, remove spaces in sequence header and add a line break, output .fasta
+for i in *.tmp; do 
+  gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/\n\1/' $i > ${i%.tmp}.fasta; 
+done
 
-for i in *.fasta; do cd-hit -i $i -o ${i%.fasta}.cd-hit.txt -d 90 -c 0.9; done
-# for each .fasta file, run cd-hit to remove sequences that are 90% similar and return individual .cd-hit.txt files
+for i in *.fasta; do
+	cd-hit -i $i -o ${i%.fasta}.cd-hit.txt -d 100 -c 0.90;
+done
+# removes sequences that are 90% similar
 
-
-
-
-cat *.cd-hit.txt > ../6_SMTs_Annelid+_95trim.cd-hit.fasta
+cat *.cd-hit.txt > ../6_SMTs_Annelid+_80trim.cd-hit.fasta
 
 cd ../
 rm -r temp
-# 27 sequences left at this point
-
-
-
-
 
 ##########################
-# RUN IQTREE
+# RUN IQTREE (80%)
 ##########################
 
 export PATH=/Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin:$PATH
@@ -198,6 +259,6 @@ export PATH=/Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/b
 ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqtree2 iqtree
 # making path to program
 
-iqtree -s 6_SMTs_Annelid+_70Domains.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+iqtree -s 6_SMTs_Annelid+_80trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
 # Run iqtree with 1000 bootstraps
-# took ~3 minutes
+# took ~1 minute
