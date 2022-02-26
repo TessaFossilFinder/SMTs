@@ -139,6 +139,7 @@ ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqt
 iqtree -s 6_SMTs_Annelid+_95trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~1 minute
+################################################################################
 
 ######################################
 ######### ALTERNATE TREES ############
@@ -202,8 +203,8 @@ ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqt
 iqtree -s 6_SMTs_Annelid+_70trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~3 minutes
+################################################################################
 
-##########################
 ##########################
 # trimAL (=/>20% gaps)
 ##########################
@@ -262,3 +263,64 @@ ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqt
 iqtree -s 6_SMTs_Annelid+_80trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~1 minute
+################################################################################
+
+##########################
+# trimAL (=/>15% gaps)
+##########################
+
+trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL.85.fasta -gt 0.85
+#trim sequences with less than 85% coverage or more than 15% gaps
+
+#################################
+# Clean (85%)sequences with CD-Hit
+#################################
+
+# create temp directory #
+
+mkdir temp
+cd temp
+
+# Format results so each line is one sequence #
+
+gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.85.fasta > tmp1
+tr -d '\n' < tmp1  > tmp2
+gsed 's/>/\n>/g' tmp2 > tmp3
+gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_85trim.txt
+rm tmp*
+
+# split into files by ID #
+
+awk -F'\t' '!_[$1]++ { fn && close(fn); fn = $1 ".tmp"} { print > fn } ' 5_SMTs_Annelid+_85trim.txt
+# split each by sequence header
+
+# reformat into fasta #
+
+for i in *.tmp; do 
+  gsed -E 's/^([^\t]*)\t/\1/;s/\t([^\t]*)$/\n\1/' $i > ${i%.tmp}.fasta; 
+done
+
+for i in *.fasta; do
+	cd-hit -i $i -o ${i%.fasta}.cd-hit.txt -d 100 -c 0.90;
+done
+# removes sequences that are 90% similar
+
+cat *.cd-hit.txt > ../6_SMTs_Annelid+_85trim.cd-hit.fasta
+
+cd ../
+rm -r temp
+
+##########################
+# RUN IQTREE (85%)
+##########################
+
+export PATH=/Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin:$PATH
+# copy Iqtree path to PATH
+
+ln -s /Users/brunoir/Desktop/Bioinformatics_Programs/iqtree-2.1.3-MacOSX/bin/iqtree2 iqtree
+# making path to program
+
+iqtree -s 6_SMTs_Annelid+_85trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+# Run iqtree with 1000 bootstraps
+# took ~1 minute
+################################################################################
