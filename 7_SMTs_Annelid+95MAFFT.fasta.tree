@@ -1,0 +1,176 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=74;
+	taxlabels
+	'Alitta_virens|GINI01005303.1|p1'[&!color=#0000ff]
+	'Alitta_virens|GINI01069748.1|p1'[&!color=#0000ff]
+	'Alitta_virens|GINI01095864.1|p1'[&!color=#0000ff]
+	'Amphimedon_queenslandica|XP_003387525.1|PREDICTED'
+	'Amynthas_gracilis|GIKF01022106.1|p2'[&!color=#0000ff]
+	'Aplysina_aerophoba|HANI01212484.1|p2'
+	'Aplysina_aerophoba|HBWR010140028.1|p1'
+	'Aplysina_aerophoba|HBWR010140029.1|p1'
+	'Aplysina_aerophoba|HBWR010267013.1|p1'
+	'Aplysina_aerophoba|HBWR010267028.1|p2'
+	'Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP'[&!color=#ff00ff]
+	'Arabidopsis_thaliana|NP_173458.1|sterol_methyltransferase_2|OUTGROUP'[&!color=#ff00ff]
+	'Arabidopsis_thaliana|NP_177736.1|sterol_methyltransferase_3|OUTGROUP'[&!color=#ff00ff]
+	'Aureococcus_anophagefferens|XP_009034345.1|hypothetical_protein_AURANDRAFT_21939|OUTGROUP'[&!color=#ff00ff]
+	'Aureococcus_anophagefferens|XP_009034460.1|hypothetical_protein_AURANDRAFT_52760|OUTGROUP'[&!color=#ff00ff]
+	'Aureococcus_anophagefferens|XP_009037888.1|hypothetical_protein_AURANDRAFT_59110|OUTGROUP'[&!color=#ff00ff]
+	'Caenorhabditis_elegans|NP_497549.2|Sterol_4Cmethyltransferase_strm1|OUTGROUP'[&!color=#ff00ff]
+	'Capitella_teleta|ELU07827.1'[&!color=#0000ff]
+	'Chlamydomonas_reinhardtii|XP_001690775.1|uncharacterized_protein_CHLRE_12g500500v5|OUTGROUP'[&!color=#ff00ff]
+	'Chondrilla_nucula|comp86071_c0_seq1|p1'
+	'Corticium_candelabrum|comp42865_c0_seq1|p1'
+	'Cymbastela_stipitata|GHWA01019167.1|p1'
+	'Cymbastela_stipitata|GHWA01019168.1|p1'
+	'Cymbastela_stipitata|GHWA01019169.1|p1'
+	'Dysidea_avara|HANJ01129280.1|p1'
+	'Dysidea_avara|HANJ01279651.1|p1'
+	'Eisenia_fetida|GIKG01031241.1|p2'[&!color=#0000ff]
+	'Eisenia_fetida|GIKG01135343.1|p1'[&!color=#0000ff]
+	'Emiliania_huxleyi|XP_005767411.1|sterol_methyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Enchytraeus_albidus|GJSG01022432.1|p1'[&!color=#0000ff]
+	'Enchytraeus_crypticus|GALF01010111.1|p1'
+	'Glossoscolex_paulistus|GBIL01031091.1|p1'[&!color=#0000ff]
+	'Glossoscolex_paulistus|GBIL01037864.1|p1'[&!color=#0000ff]
+	'Guillardia_theta|XP_005841951.1|sterol_methyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Halichondria_panicea|GIFJ01343379.1|p1'
+	'Halichondria_panicea|GIFJ01343381.1|p1'
+	'Halichondria_panicea|GIFJ01542846.1|p1'
+	'Haliclona_tubifera|GFAV01007619.1|p1'
+	'Halisarca_caerulea|GFSI01014458.1|p1'
+	'Halisarca_dujardinii|GIFI01118229.1|p1'
+	'Hirudo_verbana|GGIQ01029655.1|p1'[&!color=#0000ff]
+	'Ircinia_fasciculata|comp79702_c0_seq1|p1'
+	'Lamellibrachia_luymesi|FUN_033246T1'
+	'Lamellibrachia_satsuma|GEHO01253938.1|p1'[&!color=#0000ff]
+	'Leucetta_chagosensis|GIYV01022907.1|p1'
+	'Lumbriculus_variegatus|GIWA01114918.1|p1'[&!color=#0000ff]
+	'Lumbricus_castaneus|GGRB01015146.1|p1'[&!color=#0000ff]
+	'Lumbricus_rubellus|GIFV01044038.1|p1'[&!color=#0000ff]
+	'Monosiga_brevicollis|XP_001748534.1|uncharacterized_protein_MONBRDRAFT_33702|OUTGROUP'[&!color=#ff00ff]
+	'Neopetrosia_compacta|GIYW01007509.1|p1'
+	'Neopetrosia_compacta|GIYW01040850.1|p1'
+	'Neopetrosia_compacta|GIYW01054291.1|p1'
+	'Ophryotrocha_diadema|GENQ01004874.1|p1'
+	'Ophryotrocha_diadema|GENQ01005341.1|p1'[&!color=#0000ff]
+	'Oscarella_lobularis|GIUN01019694.1|p1'
+	'Paraescarpia_echinospica|GHDL01085970.1|p1'[&!color=#0000ff]
+	'Perinereis_aibuhitensis|GDAF01010172.1|p1'[&!color=#0000ff]
+	'Perinereis_aibuhitensis|GDAF01019697.1|p1'[&!color=#0000ff]
+	'Physcomitrium_patens|XP_024391164.1|24methylenesterol_Cmethyltransferase_2like|OUTGROUP'[&!color=#ff00ff]
+	'Physcomitrium_patens|XP_024395494.1|cycloartenolC24methyltransferase_1like|OUTGROUP'[&!color=#ff00ff]
+	'Platynereis_dumerilii|HALR01229039.1|p1'[&!color=#0000ff]
+	'Platynereis_dumerilii|HALR01261698.1|p1'[&!color=#0000ff]
+	'Puccinia_graminis|XP_003321161.1|sterol_24Cmethyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Puccinia_graminis|XP_003335809.1|sterol_24Cmethyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Pygospio_elegans|GFPL01001539.1|p1'[&!color=#0000ff]
+	'Romanchella_perrieri|HBVW01010218.1|p1'[&!color=#0000ff]
+	'Saccharomyces_cerevisiae|NP_013706.1|sterol_24Cmethyltransferase|OUTGROUP'[&!color=#ff00ff]
+	'Spirobranchus_lamarcki|GGGS01270992.1|p1'
+	'Spongilla_lacustris|comp37367_c0_seq1|p1'
+	'Sycon_coactum|comp109195_c0_seq1|p1'[&!color=#ff00ff]
+	'Sycon_coactum|comp812665_c0_seq1|p1'[&!color=#ff00ff]
+	'Thalassiosira_pseudonana|XP_002287743.1|predicted_protein'
+	'Thalassiosira_pseudonana|XP_002292358.1|sterol_24Cmethyltransferase'
+	'Volvox_carteri|XP_002948023.1|hypothetical_protein_VOLCADRAFT_103647|OUTGROUP'[&!color=#ff00ff]
+;
+end;
+
+begin trees;
+	tree tree_1 = [&R] ('Alitta_virens|GINI01005303.1|p1':0.172761,(((('Alitta_virens|GINI01069748.1|p1':0.082329,((((((((((('Amphimedon_queenslandica|XP_003387525.1|PREDICTED':0.270973,'Haliclona_tubifera|GFAV01007619.1|p1':0.326252)[&label=100]:0.139421,('Neopetrosia_compacta|GIYW01007509.1|p1':0.213793,'Neopetrosia_compacta|GIYW01054291.1|p1':0.153492)[&label=100]:0.202019)[&label=100]:0.142355,'Spongilla_lacustris|comp37367_c0_seq1|p1':0.593852)[&label=87]:0.098563,('Cymbastela_stipitata|GHWA01019167.1|p1':0.089001,('Cymbastela_stipitata|GHWA01019168.1|p1':0.169467,'Cymbastela_stipitata|GHWA01019169.1|p1':3.0E-6)[&label=100]:0.141188)[&label=100]:0.237825)[&label=99]:0.191121,(('Aplysina_aerophoba|HANI01212484.1|p2':2.0E-6,'Dysidea_avara|HANJ01129280.1|p1':3.0E-6)[&label=100]:0.410905,('Chondrilla_nucula|comp86071_c0_seq1|p1':0.042798,('Halisarca_caerulea|GFSI01014458.1|p1':0.078702,'Halisarca_dujardinii|GIFI01118229.1|p1':0.239653)[&label=98]:0.053631)[&label=100]:0.410196)[&label=99]:0.227208)[&label=96]:0.122501,(((('Arabidopsis_thaliana|NP_173458.1|sterol_methyltransferase_2|OUTGROUP':0.060554,'Arabidopsis_thaliana|NP_177736.1|sterol_methyltransferase_3|OUTGROUP':0.134049)[&label=67]:0.122251,'Physcomitrium_patens|XP_024391164.1|24methylenesterol_Cmethyltransferase_2like|OUTGROUP':0.303175)[&label=100]:0.547567,('Chlamydomonas_reinhardtii|XP_001690775.1|uncharacterized_protein_CHLRE_12g500500v5|OUTGROUP':0.079675,'Volvox_carteri|XP_002948023.1|hypothetical_protein_VOLCADRAFT_103647|OUTGROUP':0.075244)[&label=99]:0.477239)[&label=41]:0.086048,'Caenorhabditis_elegans|NP_497549.2|Sterol_4Cmethyltransferase_strm1|OUTGROUP':1.790688)[&label=95]:0.409473)[&label=60]:0.037996,((((((((('Aplysina_aerophoba|HBWR010140028.1|p1':0.137205,'Aplysina_aerophoba|HBWR010140029.1|p1':0.209197)[&label=100]:0.540388,'Corticium_candelabrum|comp42865_c0_seq1|p1':1.297121)[&label=69]:0.177347,'Neopetrosia_compacta|GIYW01040850.1|p1':0.666427)[&label=66]:0.131236,('Aplysina_aerophoba|HBWR010267013.1|p1':0.091308,'Aplysina_aerophoba|HBWR010267028.1|p2':0.066129)[&label=100]:0.608832)[&label=68]:0.085559,(('Arabidopsis_thaliana|NP_001078579.1|sterol_methyltransferase_1|OUTGROUP':0.279618,'Physcomitrium_patens|XP_024395494.1|cycloartenolC24methyltransferase_1like|OUTGROUP':0.271519)[&label=99]:0.180677,('Aureococcus_anophagefferens|XP_009034460.1|hypothetical_protein_AURANDRAFT_52760|OUTGROUP':0.228101,((('Halichondria_panicea|GIFJ01343379.1|p1':0.073215,'Halichondria_panicea|GIFJ01343381.1|p1':0.052021)[&label=96]:0.023295,'Halichondria_panicea|GIFJ01542846.1|p1':0.058366)[&label=100]:0.162514,'Thalassiosira_pseudonana|XP_002287743.1|predicted_protein':0.131344)[&label=96]:0.079512)[&label=100]:0.617587)[&label=32]:0.055628)[&label=29]:0.083216,'Hirudo_verbana|GGIQ01029655.1|p1':0.772015)[&label=59]:0.064033,(('Puccinia_graminis|XP_003321161.1|sterol_24Cmethyltransferase|OUTGROUP':0.488046,'Puccinia_graminis|XP_003335809.1|sterol_24Cmethyltransferase|OUTGROUP':0.27564)[&label=92]:0.123246,'Saccharomyces_cerevisiae|NP_013706.1|sterol_24Cmethyltransferase|OUTGROUP':0.418965)[&label=99]:0.36017)[&label=52]:0.041531,((((('Aureococcus_anophagefferens|XP_009034345.1|hypothetical_protein_AURANDRAFT_21939|OUTGROUP':1.73238,'Thalassiosira_pseudonana|XP_002292358.1|sterol_24Cmethyltransferase':0.153588)[&label=68]:0.191156,('Aureococcus_anophagefferens|XP_009037888.1|hypothetical_protein_AURANDRAFT_59110|OUTGROUP':0.640213,'Guillardia_theta|XP_005841951.1|sterol_methyltransferase|OUTGROUP':0.417645)[&label=58]:0.059512)[&label=47]:0.097789,'Sycon_coactum|comp812665_c0_seq1|p1':0.363949)[&label=31]:0.026648,'Emiliania_huxleyi|XP_005767411.1|sterol_methyltransferase|OUTGROUP':0.917277)[&label=56]:0.17658,('Leucetta_chagosensis|GIYV01022907.1|p1':0.752853,'Monosiga_brevicollis|XP_001748534.1|uncharacterized_protein_MONBRDRAFT_33702|OUTGROUP':0.757619)[&label=45]:0.143961)[&label=72]:0.209115)[&label=62]:0.08972,('Dysidea_avara|HANJ01279651.1|p1':0.070252,'Ircinia_fasciculata|comp79702_c0_seq1|p1':0.078926)[&label=100]:0.488747)[&label=53]:0.055504)[&label=71]:0.117101,((((('Amynthas_gracilis|GIKF01022106.1|p2':0.288945,'Glossoscolex_paulistus|GBIL01031091.1|p1':0.186495)[&label=98]:0.093955,('Lumbricus_castaneus|GGRB01015146.1|p1':0.023477,'Lumbricus_rubellus|GIFV01044038.1|p1':0.035263)[&label=100]:0.033698)[&label=95]:0.038419,('Eisenia_fetida|GIKG01031241.1|p2':0.085299,'Eisenia_fetida|GIKG01135343.1|p1':0.028708)[&label=98]:0.054588)[&label=99]:0.101833,'Lumbriculus_variegatus|GIWA01114918.1|p1':0.182266)[&label=100]:0.203073,'Pygospio_elegans|GFPL01001539.1|p1':0.445687)[&label=64]:0.086615)[&label=55]:0.104019,((('Enchytraeus_albidus|GJSG01022432.1|p1':0.306731,('Enchytraeus_crypticus|GALF01010111.1|p1':0.575153,'Glossoscolex_paulistus|GBIL01037864.1|p1':0.273958)[&label=98]:0.088816)[&label=79]:0.135346,((('Lamellibrachia_luymesi|FUN_033246T1':1.0E-6,'Lamellibrachia_satsuma|GEHO01253938.1|p1':0.007408)[&label=100]:0.098913,'Paraescarpia_echinospica|GHDL01085970.1|p1':0.060908)[&label=100]:0.237775,('Ophryotrocha_diadema|GENQ01004874.1|p1':0.097518,'Ophryotrocha_diadema|GENQ01005341.1|p1':0.884036)[&label=98]:0.160772)[&label=92]:0.042446)[&label=70]:0.063367,('Romanchella_perrieri|HBVW01010218.1|p1':0.257192,'Spirobranchus_lamarcki|GGGS01270992.1|p1':0.223069)[&label=100]:0.194053)[&label=69]:0.046077)[&label=36]:0.079563,'Capitella_teleta|ELU07827.1':0.389623)[&label=28]:0.022533,('Oscarella_lobularis|GIUN01019694.1|p1':0.845287,'Sycon_coactum|comp109195_c0_seq1|p1':0.558522)[&label=81]:0.193984)[&label=100]:0.40256)[&label=64]:0.058569,'Perinereis_aibuhitensis|GDAF01019697.1|p1':0.169294)[&label=58]:0.030794,'Platynereis_dumerilii|HALR01229039.1|p1':0.16361)[&label=98]:0.151542,'Alitta_virens|GINI01095864.1|p1':0.291208)[&label=99]:0.053142,('Perinereis_aibuhitensis|GDAF01010172.1|p1':0.14758,'Platynereis_dumerilii|HALR01261698.1|p1':0.20717)[&label=100]:0.011949);
+end;
+
+begin figtree;
+	set appearance.backgroundColorAttribute="Default";
+	set appearance.backgroundColour=#ffffff;
+	set appearance.branchColorAttribute="User selection";
+	set appearance.branchColorGradient=false;
+	set appearance.branchLineWidth=1.0;
+	set appearance.branchMinLineWidth=0.0;
+	set appearance.branchWidthAttribute="Fixed";
+	set appearance.foregroundColour=#000000;
+	set appearance.hilightingGradient=false;
+	set appearance.selectionColour=#2d3680;
+	set branchLabels.colorAttribute="User selection";
+	set branchLabels.displayAttribute="Branch times";
+	set branchLabels.fontName="sansserif";
+	set branchLabels.fontSize=8;
+	set branchLabels.fontStyle=0;
+	set branchLabels.isShown=false;
+	set branchLabels.significantDigits=4;
+	set layout.expansion=0;
+	set layout.layoutType="RECTILINEAR";
+	set layout.zoom=79;
+	set legend.attribute="label";
+	set legend.fontSize=10.0;
+	set legend.isShown=false;
+	set legend.significantDigits=4;
+	set nodeBars.barWidth=4.0;
+	set nodeBars.displayAttribute=null;
+	set nodeBars.isShown=false;
+	set nodeLabels.colorAttribute="User selection";
+	set nodeLabels.displayAttribute="label";
+	set nodeLabels.fontName="sansserif";
+	set nodeLabels.fontSize=8;
+	set nodeLabels.fontStyle=0;
+	set nodeLabels.isShown=true;
+	set nodeLabels.significantDigits=4;
+	set nodeShapeExternal.colourAttribute="User selection";
+	set nodeShapeExternal.isShown=false;
+	set nodeShapeExternal.minSize=10.0;
+	set nodeShapeExternal.scaleType=Width;
+	set nodeShapeExternal.shapeType=Circle;
+	set nodeShapeExternal.size=4.0;
+	set nodeShapeExternal.sizeAttribute="Fixed";
+	set nodeShapeInternal.colourAttribute="User selection";
+	set nodeShapeInternal.isShown=false;
+	set nodeShapeInternal.minSize=10.0;
+	set nodeShapeInternal.scaleType=Width;
+	set nodeShapeInternal.shapeType=Circle;
+	set nodeShapeInternal.size=4.0;
+	set nodeShapeInternal.sizeAttribute="Fixed";
+	set polarLayout.alignTipLabels=false;
+	set polarLayout.angularRange=0;
+	set polarLayout.rootAngle=0;
+	set polarLayout.rootLength=100;
+	set polarLayout.showRoot=true;
+	set radialLayout.spread=0.0;
+	set rectilinearLayout.alignTipLabels=false;
+	set rectilinearLayout.curvature=0;
+	set rectilinearLayout.rootLength=100;
+	set scale.offsetAge=0.0;
+	set scale.rootAge=1.0;
+	set scale.scaleFactor=1.0;
+	set scale.scaleRoot=false;
+	set scaleAxis.automaticScale=true;
+	set scaleAxis.fontSize=8.0;
+	set scaleAxis.isShown=false;
+	set scaleAxis.lineWidth=1.0;
+	set scaleAxis.majorTicks=1.0;
+	set scaleAxis.minorTicks=0.5;
+	set scaleAxis.origin=0.0;
+	set scaleAxis.reverseAxis=false;
+	set scaleAxis.showGrid=true;
+	set scaleBar.automaticScale=true;
+	set scaleBar.fontSize=10.0;
+	set scaleBar.isShown=true;
+	set scaleBar.lineWidth=1.0;
+	set scaleBar.scaleRange=0.0;
+	set tipLabels.colorAttribute="User selection";
+	set tipLabels.displayAttribute="Names";
+	set tipLabels.fontName="sansserif";
+	set tipLabels.fontSize=8;
+	set tipLabels.fontStyle=0;
+	set tipLabels.isShown=true;
+	set tipLabels.significantDigits=4;
+	set trees.order=false;
+	set trees.orderType="increasing";
+	set trees.rooting=true;
+	set trees.rootingType="User Selection";
+	set trees.transform=false;
+	set trees.transformType="cladogram";
+end;
+
