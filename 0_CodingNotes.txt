@@ -154,6 +154,7 @@ iqtree -s 7_SMTs_Annelid+95MAFFT.fasta -m MFP
 iqtree -s 7_SMTs_Annelid+95MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~1 minute
+# re-named file to 8_SMTs_Annelid+95MAFFT.fasta.tree
 ################################################################################
 
 ################################################################################
@@ -223,6 +224,7 @@ mafft 6_SMTs_Annelid+_70trim.cd-hit.fasta > 7_SMTs_Annelid+70MAFFT.fasta
 iqtree -s 7_SMTs_Annelid+70MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~2 minutes
+# renamed filed to 8_SMTs_Annelid+70MAFFT.fasta.tree
 ################################################################################
 
 ##########################
@@ -246,6 +248,12 @@ cd temp
 gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.80.fasta > tmp1
 tr -d '\n' < tmp1  > tmp2
 gsed 's/>/\n>/g' tmp2 > tmp3
+
+###############################################
+#### REMOVE GAPS BEFORE RUNNING CD-HIT ########
+###############################################
+#in bbedit find/replace/delete "-"
+
 gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_80trim.txt
 rm tmp*
 
@@ -273,15 +281,16 @@ rm -r temp
 ###############################################
 #re-align using MAFFT
 ###############################################
-mafft 6_SMTs_Annelid+_70trim.cd-hit.fasta > 7_SMTs_Annelid+70MAFFT.fasta
+mafft 6_SMTs_Annelid+_80trim.cd-hit.fasta > 7_SMTs_Annelid+80MAFFT.fasta
 
 ##########################
 # RUN IQTREE (80%)
 ##########################
 
-iqtree -s 6_SMTs_Annelid+_80trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+iqtree -s 7_SMTs_Annelid+80MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # Run iqtree with 1000 bootstraps
 # took ~1 minute
+#re-named to 8_SMTs_Annelid+80MAFFT.fasta.tree
 ################################################################################
 
 ##########################
@@ -305,6 +314,12 @@ cd temp
 gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.85.fasta > tmp1
 tr -d '\n' < tmp1  > tmp2
 gsed 's/>/\n>/g' tmp2 > tmp3
+
+###############################################
+#### REMOVE GAPS BEFORE RUNNING CD-HIT ########
+###############################################
+#in bbedit find/replace/delete "-"
+
 gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_85trim.txt
 rm tmp*
 
@@ -329,13 +344,20 @@ cat *.cd-hit.txt > ../6_SMTs_Annelid+_85trim.cd-hit.fasta
 cd ../
 rm -r temp
 
+###############################################
+#re-align using MAFFT
+###############################################
+mafft 6_SMTs_Annelid+_85trim.cd-hit.fasta > 7_SMTs_Annelid+85MAFFT.fasta
+
 ##########################
 # RUN IQTREE (85%)
 ##########################
 
-iqtree -s 6_SMTs_Annelid+_85trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+iqtree -s 7_SMTs_Annelid+85MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # Run iqtree with 1000 bootstraps
-# took ~1 minute
+# took ~2 minute
+# re-named to 8_SMTs_Annelid+85MAFFT.fasta.tree
+
 ################################################################################
 
 ##########################
