@@ -164,7 +164,7 @@ iqtree -s 7_SMTs_Annelid+95MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # trimAL (=/>30% gaps)
 ##########################
 
-trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL70.fasta -gt 0.70
+trimal -in 4_SMTs_Annelid+_MAFFT.fasta -out 5_SMTs_Annelid+_trimAL.70.fasta -gt 0.70
 #trim sequences with less than 70% coverage or more than 30% gaps
 
 #################################
@@ -178,9 +178,15 @@ cd temp
 
 # Format results so each line is one sequence #
 
-gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL70.fasta > tmp1
+gsed s/"\(>\)\(.*\)"/"\1\2\t"/g ../5_SMTs_Annelid+_trimAL.70.fasta > tmp1
 tr -d '\n' < tmp1  > tmp2
 gsed 's/>/\n>/g' tmp2 > tmp3
+
+###############################################
+#### REMOVE GAPS BEFORE RUNNING CD-HIT ########
+###############################################
+#in bbedit find/replace/delete "-"
+
 gsed -E 's/^([^|]*)|/\1\t/' <(sort tmp3) > 5_SMTs_Annelid+_70trim.txt
 rm tmp*
 
@@ -205,13 +211,18 @@ cat *.cd-hit.txt > ../6_SMTs_Annelid+_70trim.cd-hit.fasta
 cd ../
 rm -r temp
 
+###############################################
+#re-align using MAFFT
+###############################################
+mafft 6_SMTs_Annelid+_70trim.cd-hit.fasta > 7_SMTs_Annelid+70MAFFT.fasta
+
 ##########################
 # RUN IQTREE (70%)
 ##########################
 
-iqtree -s 6_SMTs_Annelid+_70trim.cd-hit.fasta -nt 8 -m LG+I+G -B 1000
+iqtree -s 7_SMTs_Annelid+70MAFFT.fasta -nt 8 -m LG+G4 -B 1000
 # Run iqtree with 1000 bootstraps
-# took ~3 minutes
+# took ~2 minutes
 ################################################################################
 
 ##########################
@@ -258,6 +269,11 @@ cat *.cd-hit.txt > ../6_SMTs_Annelid+_80trim.cd-hit.fasta
 
 cd ../
 rm -r temp
+
+###############################################
+#re-align using MAFFT
+###############################################
+mafft 6_SMTs_Annelid+_70trim.cd-hit.fasta > 7_SMTs_Annelid+70MAFFT.fasta
 
 ##########################
 # RUN IQTREE (80%)
